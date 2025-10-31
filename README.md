@@ -1,9 +1,3 @@
-NAME: RATHISH.R
-
-REG NO:24901297
-
-Date: 11.04.2025
-
 # BOOLEAN_FUNCTION_MINIMIZATION
 
 **AIM:**
@@ -22,8 +16,7 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Theory**
 
-Logic function is implemented using Verilog, a hardware description language used to model electronic systems. Verilog enables the design and simulation of digital circuits efficiently. Quartus software is utilized to compile, synthesize, and verify the logic function through simulation. This process ensures the functionality aligns with the expected behavior of the logic design.
-
+**Logic Diagram**
 
 **Procedure**
 
@@ -40,56 +33,51 @@ Logic function is implemented using Verilog, a hardware description language use
 
 **Program:**
 
-module DE2(A, B, C, D, W, X, Y, Z, F1,F2);
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
 
-input A, B, C, D, W, X, Y, Z;
+i)
+module funct1(a,b,c,d,f1);
 
-wire x1, x2, x3, x4, x5, x6, x7, x8, x9, x10;
+input a,b,c,d;
 
-output F1, F2;
+output f1;
 
-assign x1=(~A) & (~B) & (~C) & (~D);
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
 
-assign x2=(A)&(~C)&(~D);
+endmodule
 
-assign x3=(~B)&(C)&(~D);
+ii)
+module funct2(w,x,y,z,f2);
 
-assign x4=(~A)&(B)&(C)&(D);
+input w,x,y,z;
 
-assign x5=(B)&(~C)&(D);
+output f2;
 
-assign x6=(X)&(~Y)&(Z);
+assign f2=((~y & z)|( w & y )|(x & y));
 
-assign x7=(~X)&(~Y)&(Z);
-
-assign x8=(~W)&(X)&(Y);
-
-assign x9=(W)&(~X)&(Y);
-
-assign x10=(W)&(X)&(Y);
-
-assign F1=x1|x2|x3|x4|x5;
-
-assign F2=x6|x7|x8|x9|x10;
-
-endmodule 
-
+endmodule
 
 **RTL realization**
 
-![Screenshot (75)](https://github.com/user-attachments/assets/49728223-7198-4966-acd7-d2e4d62c2a63)
+F1:
+
+<img width="903" height="473" alt="image" src="https://github.com/user-attachments/assets/7619ccd7-801e-42a3-b107-65514915e411" />
+
+F2:
+
+<img width="965" height="526" alt="image" src="https://github.com/user-attachments/assets/44e579c2-a461-41ad-a03c-c192c93f6564" />
 
 
+**Timing Diagram**
+
+F1:
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/85ba0904-91ac-4a71-bce8-6635d5ff2679" />
 
 
-**Output:**
+F2:
 
-![388523450-42267acf-5bb4-43ba-9b18-b0551e02a1df](https://github.com/user-attachments/assets/592d3d92-47a3-4581-be04-a4a12b94c5f4)
-
-
-
-
-
+<img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/78492061-6e4f-4016-88a0-bd636c888486" />
 
 **Result:**
 
